@@ -1,0 +1,24 @@
+[general]
+
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=true
+
+[entry]
+
+Android.armeabi-v7a="res://trash_panda/target/debug/libtrash_panda.so"
+Android.arm64-v8a="res://trash_panda/target/debug/libtrash_panda.so"
+Android.x86="res://trash_panda/target/debug/libtrash_panda.so"
+Android.x86_64="res://trash_panda/target/debug/libtrash_panda.so"
+X11.64="res://trash_panda/target/debug/libtrash_panda.so"
+X11.32="res://trash_panda/target/debug/libtrash_panda.so"
+
+[dependencies]
+
+Android.armeabi-v7a=[  ]
+Android.arm64-v8a=[  ]
+Android.x86=[  ]
+Android.x86_64=[  ]
+X11.64=[  ]
+X11.32=[  ]
