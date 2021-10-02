@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Fonts/IndieFlower-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/MainMenu.gdns" type="Script" id=2]
+[ext_resource path="res://Sprites/Racoon.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -40,10 +41,10 @@ custom_fonts/font = SubResource( 1 )
 text = "Trash Panda"
 
 [node name="start_button" type="Button" parent="."]
-margin_left = 384.0
-margin_top = 259.0
-margin_right = 564.0
-margin_bottom = 315.0
+margin_left = 188.912
+margin_top = 256.477
+margin_right = 368.912
+margin_bottom = 312.477
 custom_fonts/font = SubResource( 2 )
 text = "Start"
 __meta__ = {
@@ -51,15 +52,20 @@ __meta__ = {
 }
 
 [node name="continue_button" type="Button" parent="."]
-margin_left = 380.0
-margin_top = 365.0
-margin_right = 571.0
-margin_bottom = 419.0
+margin_left = 185.753
+margin_top = 368.364
+margin_right = 376.753
+margin_bottom = 422.364
 custom_fonts/font = SubResource( 3 )
 text = "Instructions"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Racoon" type="Sprite" parent="."]
+position = Vector2( 652.521, 324.33 )
+scale = Vector2( 0.3, 0.295833 )
+texture = ExtResource( 3 )
 
 [connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="continue_button" to="." method="_on_continue_button_pressed"]
