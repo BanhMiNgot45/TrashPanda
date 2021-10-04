@@ -9,6 +9,7 @@ pub struct Racoon {
     velocity: Vector2,
     #[property]
     speed: f32,
+    animation: &'static str,
 }
 
 impl Racoon {
@@ -18,6 +19,7 @@ impl Racoon {
             input: Input::godot_singleton(),
             velocity: Vector2::new(0.0, 0.0),
             speed: 10.0,
+            animation: "right",
         }
     }
 }
@@ -50,22 +52,17 @@ impl Racoon {
         } else {
             self.velocity.y = 0.0;
         }
-        let mut animation = "right";
         if self.velocity.x > 0.0 {
-            animation = "right";
+            self.animation = "right";
         } else if self.velocity.x < 0.0 {
-            animation = "left";
-        } else if self.velocity.x == 0.0 && animation == "right" {
-            animation = "idle-right";
-        } else if self.velocity.x == 0.0 && animation == "left" {
-            animation = "idle-left";
+            self.animation = "left";
         } else {
-            animation = "idle-right";
+            self.animation = "idle-right";
         }
         let position = owner.global_position()
             + Vector2::new(self.velocity.x * delta, self.velocity.y * delta);
         owner.set_global_position(position);
         let animator = unsafe { self.animated_sprite.assume_safe() };
-        animator.play(animation, false);
+        animator.play(self.animation, false);
     }
 }

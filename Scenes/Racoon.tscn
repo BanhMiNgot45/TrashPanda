@@ -62,6 +62,7 @@ height = 30.0376
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 2 )
+speed = 40.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.09954, 0.106547 )
@@ -72,3 +73,6 @@ animation = "idle-left"
 position = Vector2( 3.74579, -1.49831 )
 rotation = 1.5708
 shape = SubResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
