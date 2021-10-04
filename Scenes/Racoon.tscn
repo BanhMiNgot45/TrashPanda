@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/RacoonSpriteSheet.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Racoon.gdns" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -22,17 +23,17 @@ flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 960, 0, 960, 960 )
 
-[sub_resource type="AtlasTexture" id=8]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 960, 960, 960 )
-
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 960, 960 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 960, 960, 960 )
+
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
@@ -44,29 +45,30 @@ animations = [ {
 "name": "right",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "idle-left",
+"name": "idle-right",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "idle-right",
+"name": "idle-left",
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=7]
+[sub_resource type="CapsuleShape2D" id=8]
 radius = 34.4136
 height = 30.0376
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.09954, 0.106547 )
-frames = SubResource( 5 )
+frames = SubResource( 7 )
 animation = "idle-left"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.74579, -1.49831 )
 rotation = 1.5708
-shape = SubResource( 7 )
+shape = SubResource( 8 )
