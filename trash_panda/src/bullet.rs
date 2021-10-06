@@ -112,6 +112,6 @@ impl Bullet {
     }
 
     fn _on_bullet_body_entered(&self, _owner: &RigidBody2D, body: Node) {
-        body.set_process(false);
+        body.queue_free();
     }
 }
