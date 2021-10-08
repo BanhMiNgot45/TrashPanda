@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Racoon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/BulletManager.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -8,4 +9,14 @@
 format = 1
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 534.195, 308.749 )
+position = Vector2( 510.65, 300.34 )
+
+[node name="Node2D" parent="." instance=ExtResource( 2 )]
+position = Vector2( 210.224, 282.541 )
+y_coeff = 1.0
+theta_x_coeff = 1.0
+num_bullets = 6
+theta_y_coeff = 1.0
+speed = 5.0
+time_delay = 1.0
+x_coeff = 1.0

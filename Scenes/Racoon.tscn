@@ -67,7 +67,7 @@ speed = 40.0
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.09954, 0.106547 )
 frames = SubResource( 7 )
-animation = "idle-left"
+animation = "idle-right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.74579, -1.49831 )
